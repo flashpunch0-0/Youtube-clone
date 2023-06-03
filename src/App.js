@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Header handlesidebar={handlesidebar} />
-      <div className="appcontainer flex">
+      <div className="appcontainer container flex">
         <Router>
           <Sidebar sideBarBool={sideBarBool} handlesidebar={handlesidebar} />
           <Routes>

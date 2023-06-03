@@ -10,6 +10,7 @@ export const Sidebar = ({ sideBarBool, handlesidebar }) => {
     // console.log(sideBarBool);
     return (
         // <nav className="{sideBarBool ? 'hidden' : 'block'}  bg-blacksecondary flex flex-col py-4 w-[250px] "  >
+
         <nav className={`${sideBarBool ? "sidebar"
             : "sidebaropen"
             }`}
@@ -18,7 +19,7 @@ export const Sidebar = ({ sideBarBool, handlesidebar }) => {
             {/* created custom tailwind class - my-custom-liclass and spanclass in css file using @apply */}
             <li className=" my-custom-liclass bg-bordercolor rounded-lg  ">
                 <GoHome className="h-6 w-6 md:h-5 md:w-5" />
-                <span className="spanclass">Home</span>
+                <span className="spanclass ">Home</span>
             </li>
             <li className="my-custom-liclass hover:bg-bordercolor hover:rounded-lg">
                 <Subcription className="h-6 w-6 md:h-5 md:w-5" />
@@ -39,6 +40,7 @@ export const Sidebar = ({ sideBarBool, handlesidebar }) => {
             </li>
             <hr className="h-[1px] bg-bordercolor border-0" />
         </nav >
+
     )
 }
 

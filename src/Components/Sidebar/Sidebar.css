@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 .sidebar {
-  @apply hidden  bg-blacksecondary flex flex-col py-4  md:w-[250px];
+  @apply hidden h-full bg-blacksecondary flex flex-col py-4  md:w-[90px] lg:w-[250px]  sm:fixed;
 }
 .sidebaropen {
-  @apply block  h-full bg-blacksecondary flex flex-col py-4 w-[90px]  md:w-[250px] fixed;
+  @apply block h-full bg-blacksecondary flex flex-col py-4  md:w-[250px] fixed md:static;
 }
 
 .my-custom-liclass {
@@ -17,5 +17,5 @@
   @apply ml-4
      text-sm
      font-semibold
-     hidden md:block lg:block;
+      hidden md:block;
 }
