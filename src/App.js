@@ -4,7 +4,9 @@ import { Header } from "./Components/Header/Header";
 import { Sidebar } from "./Components/Sidebar/Sidebar";
 import { Homevideoscreen } from "./Screens/Homevideoscreen";
 import "./App.css";
-function App() {
+import LoginScreen from "./Screens/LoginScreen/Loginscreen";
+
+export const Layout = ({ children }) => {
   // below usstate use to toggle sidemenu using menu button
   const [sideBarBool, toggleSidebar] = useState(false)
   const handlesidebar = () => toggleSidebar(value => !value)
@@ -13,14 +15,27 @@ function App() {
   return (
     <>
       <Header handlesidebar={handlesidebar} />
-      <div className="appcontainer container flex">
-        <Router>
-          <Sidebar sideBarBool={sideBarBool} handlesidebar={handlesidebar} />
-          <Routes>
-            <Route path="/" element={<Homevideoscreen />} />
-          </Routes>
-        </Router>
+      <div className="appcontainer  flex">
+        <Sidebar sideBarBool={sideBarBool} handlesidebar={handlesidebar} />
+        {children}
+
       </div>
+
+    </>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout><Homevideoscreen /></Layout>} />
+          <Route path="/auth" element={<Layout><LoginScreen /></Layout>} />
+          <Route path="/search" element={<Layout><h1>Search results</h1></Layout>} />
+          <Route redirect="/" />
+        </Routes>
+      </Router>
     </>
   );
 }

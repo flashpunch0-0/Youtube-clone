@@ -1,0 +1,10 @@
+.login {
+  height: 100vh;
+  display: grid;
+
+  place-items: center;
+}
+
+login__container {
+  @apply bg-blacksecondary p-8 mx-4 rounded-lg flex  flex-col items-center;
+}
