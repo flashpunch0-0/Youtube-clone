@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Header } from "./Components/Header/Header";
 import { Sidebar } from "./Components/Sidebar/Sidebar";
@@ -9,7 +9,11 @@ import LoginScreen from "./Screens/LoginScreen/Loginscreen";
 export const Layout = ({ children }) => {
   // below usstate use to toggle sidemenu using menu button
   const [sideBarBool, toggleSidebar] = useState(false)
-  const handlesidebar = () => toggleSidebar(value => !value)
+  // const [sideBarBool, toggleSidebar] = useState("")
+  const handlesidebar = () => {
+    toggleSidebar(value => !value)
+
+  }
 
 
   return (

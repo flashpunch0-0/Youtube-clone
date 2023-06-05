@@ -25,3 +25,10 @@
      font-semibold
       hidden md:block;
 }
+.login {
+  @apply ml-4
+  text-sm
+  font-semibold
+   hidden md:block
+   hover:text-green-500 transition duration-300;
+}

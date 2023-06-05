@@ -11,6 +11,7 @@ import ytlogomobile from "./Images/yt-logo-mobile.png";
 import kratik from "./Images/kratik.jpeg";
 
 export const Header = ({ handlesidebar }) => {
+
     return (
         <div className=" header flex justify-between items-center   bg-blackprimary ">
             <div className=" header_left flex justify-between items-center sticky px-4 md:px-5">
@@ -49,7 +50,12 @@ export const Header = ({ handlesidebar }) => {
                 <div className="flex items-center justify-center ml-2 h-10 w-10 rounded-full hover:bg-[#303030]  ">
                     <FiBell className="text-white text-xl cursor-pointer  hidden md:block" />
                 </div>
-                <div className="flex h-10 w-10 overflow-hidden rounded-full md:ml-4">
+
+                {/* <div className="flex h-10 w-10 overflow-auto rounded-full md:ml-4"> */}
+                <div className="flex items-center justify-center  h-10 w-10 rounded-full hover:bg-[#303030] ">
+                    {/* check user authenticated if then show picture or login page */}
+
+
                     <img src={kratik} className="  w-10 h-10 md:w-10 md:h-10 rounded-full " alt="" />
                 </div>
             </div>
