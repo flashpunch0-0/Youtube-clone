@@ -2,14 +2,19 @@ import React from "react"
 import { GoHome } from "react-icons/go"
 import {
     MdOutlineSubscriptions as Subcription, MdOutlineVideoLibrary as Library,
-    MdThumbUp, MdHistory,
+    MdThumbUp, MdHistory, MdExitToApp,
 } from "react-icons/md"
 import "./Sidebar.css"
-
+import { useDispatch } from "react-redux"
+// importing logout function 
+import { log_out } from '../../redux/action/auth.action'
 export const Sidebar = ({ sideBarBool, handlesidebar }) => {
 
     // console.log(sideBarBool);
-
+    const dispatch = useDispatch()
+    const logouthandler = () => {
+        dispatch(log_out())
+    }
 
     return (
         <div className="h-full  bg-blackprimary flex flex-col py-4  md:w-[250px] fixed md:static ">
@@ -36,10 +41,15 @@ export const Sidebar = ({ sideBarBool, handlesidebar }) => {
                     <MdHistory className="h-6 w-6 md:h-5 md:w-5" />
                     <span className="spanclass">History</span>
                 </li>
-                <li className="my-custom-liclass  hover:bg-bordercolor hover:rounded-lg  p">
+                <li className="my-custom-liclass  hover:bg-bordercolor hover:rounded-lg ">
                     <MdThumbUp className="h-6 w-6 md:h-5 md:w-5" />
                     <span className="spanclass">Liked videos</span>
 
+                </li>
+                <hr className="h-[1px] bg-bordercolor border-0" />
+                <li onClick={logouthandler} className="my-custom-liclass  hover:bg-bordercolor hover:rounded-lg ">
+                    <MdExitToApp size={23} />
+                    <span className="spanclass">Log Out</span>
                 </li>
                 <hr className="h-[1px] bg-bordercolor border-0" />
             </nav >

@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Categoriesbar from '../Components/Categoriesbar/Categoriesbar'
 import "./Homevideoscreen.css";
 import { Video } from '../Components/Video/Video';
-// import { useDispatch } from 'react-redux';
-// import { getApiVideos } from '../redux/action/Video.action';
 import request from "../api";
 export const Homevideoscreen = () => {
     const [apiData, setApiData] = useState([])

@@ -7,10 +7,12 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { FiBell } from "react-icons/fi";
 import ytlogo from "./Images/yt-logo.png";
 import ytlogomobile from "./Images/yt-logo-mobile.png";
-import kratik from "./Images/kratik.jpeg";
-
+// import kratik from "./Images/kratik.jpeg";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase";
+import { Link } from "react-router-dom";
 export const Header = ({ handlesidebar }) => {
-
+    const [user] = useAuthState(auth);
     return (
         <div className=" header flex justify-between items-center   bg-blackprimary ">
 
@@ -53,7 +55,32 @@ export const Header = ({ handlesidebar }) => {
                     <FiBell className="text-white text-xl cursor-pointer  hidden md:block" />
                 </div>
                 <div className="flex items-center justify-center  h-10 w-10 rounded-full hover:bg-[#303030] ">
-                    <img src={kratik} className="  w-10 h-10 md:w-10 md:h-10 rounded-full " alt="" />
+                    {/* <img src={kratik} className="  w-10 h-10 md:w-10 md:h-10 rounded-full " alt="" /> */}
+                    {user && (
+                        <>
+                            {/* <p>{user?.displayName}</p> */}
+                            <img
+
+                                src={user?.photoURL || ""}
+                                alt="gphoto"
+                                className="w-8  h-8 mr-1 rounded-full"
+                            />
+
+                        </>
+                    )}
+                    {!user && (
+                        <>
+                            <button className=" text-lg rounded-lg hover:bg-green-500 hover:text-white transition duration-300">
+                                <Link
+                                    className=""
+                                    to={"/auth"}
+                                >
+                                    login
+                                </Link>
+                            </button>
+
+                        </>
+                    )}
                 </div>
             </div>
         </div>

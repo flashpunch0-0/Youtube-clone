@@ -5,7 +5,8 @@ import { Sidebar } from "./Components/Sidebar/Sidebar";
 import { Homevideoscreen } from "./Screens/Homevideoscreen";
 import "./App.css";
 import LoginScreen from "./Screens/LoginScreen/Loginscreen";
-
+import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux'
 export const Layout = ({ children }) => {
   // below usstate use to toggle sidemenu using menu button
   const [sideBarBool, toggleSidebar] = useState(false)
@@ -30,6 +31,13 @@ export const Layout = ({ children }) => {
 }
 
 function App() {
+  // const { loading } = useSelector(state => state.auth)
+  // const navigate = useNavigate()
+  // useEffect(() => {
+  //   if (!loading) {
+  //     navigate('/auth')
+  //   }
+  // }, [loading, navigate])
   return (
     <>
       <Router>
