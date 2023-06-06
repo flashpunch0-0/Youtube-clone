@@ -1,16 +1,15 @@
 // import firebase from "firebase/app";
 import { auth, gprovider } from "../../firebase";
 import { signInWithPopup } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+
 export const Login = () => async (dispatch) => {
   try {
-    // const navigate = useNavigate();
     // const provider = new firebase.auth.GoogleAuthProvider();
     // we have already define above line in firebase.js file
     const res = await signInWithPopup(auth, gprovider);
-    // navigate("/");
-    console.log(res);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // const navigate = useNavigate();

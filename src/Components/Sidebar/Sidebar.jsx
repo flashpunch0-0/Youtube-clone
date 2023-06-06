@@ -5,15 +5,13 @@ import {
     MdThumbUp, MdHistory,
 } from "react-icons/md"
 import "./Sidebar.css"
-import { useNavigate } from "react-router-dom";
-
-
 
 export const Sidebar = ({ sideBarBool, handlesidebar }) => {
-    const navigate = useNavigate();
+
     // console.log(sideBarBool);
+
+
     return (
-        // <nav className="{sideBarBool ? 'hidden' : 'block'}  bg-blacksecondary flex flex-col py-4 w-[250px] "  >
         <div className="h-full  bg-blackprimary flex flex-col py-4  md:w-[250px] fixed md:static ">
             <nav className={`${sideBarBool ? "sidebar"
                 : "sidebaropen"
@@ -41,9 +39,8 @@ export const Sidebar = ({ sideBarBool, handlesidebar }) => {
                 <li className="my-custom-liclass  hover:bg-bordercolor hover:rounded-lg  p">
                     <MdThumbUp className="h-6 w-6 md:h-5 md:w-5" />
                     <span className="spanclass">Liked videos</span>
+
                 </li>
-
-
                 <hr className="h-[1px] bg-bordercolor border-0" />
             </nav >
         </div >
