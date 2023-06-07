@@ -47,7 +47,7 @@ export const Header = ({ handlesidebar }) => {
 
 
             {/* contains right most elements of header */}
-            <div className="header-icons flex  justify-around items-center mr-4 ">
+            <div className="header-icons flex  justify-around items-center mr-5  ">
                 <div className="flex items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030] ">
                     <RiVideoAddLine className="text-white text-xl cursor-pointer hidden md:block " />
                 </div>
@@ -63,7 +63,7 @@ export const Header = ({ handlesidebar }) => {
 
                                 src={user?.photoURL || ""}
                                 alt="gphoto"
-                                className="w-8  h-8 mr-1 rounded-full"
+                                className="w-8  h-8 rounded-full"
                             />
 
                         </>

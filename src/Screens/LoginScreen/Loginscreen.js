@@ -14,11 +14,11 @@ const LoginScreen = () => {
 
   return (
     // <div className="login bg-blackprimary fixed text-textcolor  tracking-wide h-screen grid place-items-center ">
-    <div className="login bg-blackprimary fixed text-textcolor  tracking-wide flex justify-center h-screen w-full text-2xl  ">
-      <div className=" bg-blacksecondary p-8 mx-4 rounded-lg flex  flex-col  justify-center items-center h-screen w-full ">
+    <div className="login bg-blackprimary fixed text-textcolor  tracking-wide  h-screen w-full text-2xl  ">
+      <div className=" bg-blacksecondary p-8 mx-4 rounded-lg flex  flex-col   justify-center items-center  ">
         <h2>Youtube Clone</h2>
         <img
-          className="w-[130px] h-[130px] object-contain"
+          className="w-[90px] h-[90px] object-contain"
           src="http://pngimg.com/uploads/youtube/youtube_PNG2.png"
           alt=""
         />

@@ -20,7 +20,7 @@ export const Layout = ({ children }) => {
   return (
     <>
       <Header handlesidebar={handlesidebar} />
-      <div className="appcontainer  flex">
+      <div className="appcontainer  flex justify-between ">
         <Sidebar sideBarBool={sideBarBool} handlesidebar={handlesidebar} />
         {children}
 
@@ -44,7 +44,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout><Homevideoscreen /></Layout>} />
           <Route path="/auth" element={<Layout><LoginScreen /></Layout>} />
-          <Route path="/search" element={<Layout><h1>Search results</h1></Layout>} />
+
           <Route redirect="/" />
         </Routes>
       </Router>

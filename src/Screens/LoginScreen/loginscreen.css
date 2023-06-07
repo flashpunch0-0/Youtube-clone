@@ -1,8 +1,5 @@
 .login {
   height: 100vh;
-  display: grid;
-
-  place-items: center;
 }
 
 login__container {

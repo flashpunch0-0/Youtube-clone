@@ -1,6 +1,6 @@
 import request from "../../api";
 export const getApiVideos = async () => {
-  const { data } = await request();
-
+  const apidata = request();
+  console.log(apidata);
   // return apidata
 };
