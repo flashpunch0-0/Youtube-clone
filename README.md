@@ -1,9 +1,9 @@
 # Youtube-Clone
-
+Deployment Link - https://clone-63f84.web.app/
 
 ## Summary
 
-- This is a YouTube clone project built with React JS, Redux, React components, Axios API, Tailwind CSS, React Router DOM, and Firebase Authentication. The project aims to replicate the core functionality of YouTube, including displaying video thumbnails, playing videos, responsive sidebarmenu and providing user authentication using Firebase.
+- This is a YouTube clone project built with React JS, Redux, React components, Axios API, Tailwind CSS, React Router DOM, and Firebase Authentication. The project aims to replicate the core functionality of YouTube, including displaying video thumbnails, playing videos, responsive sidebarmenu and providing user authentication and deployment using Firebase.
 
 
 # Table Of Contents
