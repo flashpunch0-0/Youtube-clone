@@ -16,7 +16,9 @@ export const Login = () => async (dispatch) => {
 
     // creating a profile object
     const profile = {
-      profile: "loaded",
+      profile: res.user.displayName,
+      // displayname: res.user.auth.displayname,
+      photoUrl: res.user.photoURL,
     };
     dispatch({
       type: LOGIN_SUCCESS,
