@@ -1,31 +1,8 @@
 import React, { useEffect, useState } from 'react'
-// import zlatan from "./VideoImages/zlatan.jpg";
 import moment from 'moment/moment';
-// import { AiFillEye } from 'react-icons/ai'
 import request from '../../api'
 import numeral from 'numeral'
 export const Video = ({ video }) => {
-    // const [apiData, setApiData] = useState(null)
-
-    // // Axios.get(`https://internship-service.onrender.com/videos?page=1`).then(
-    // //     (res) => {
-    // //         console.log(res);
-    // //         setApiData(res.data.data);
-    // //         // console.log(res.data.data.posts[0])
-    // //     }
-    // // );
-
-    // useEffect(() => {
-
-    //     Axios.get(`https://internship-service.onrender.com/videos?page=1`).then(
-    //         (res) => {
-    //             console.log(res);
-    //             setApiData(res.data.data);
-    //             // console.log(res.data.data.posts[0])
-    //         }
-    //     );
-    // }, [])
-    // older part
 
     // getting videos 
     const {
@@ -90,8 +67,6 @@ export const Video = ({ video }) => {
                 <img
                     className=' w-full'
                     src={medium.url}
-                    // src={zlatan}
-                    // src={apiData?.posts[0].submission.thumbnail}
                     alt='thumbnail'
                 />
                 {/* video duration */}
@@ -99,7 +74,6 @@ export const Video = ({ video }) => {
             </div>
             <div className='  mb-1  text-white line-clamp-1 '>
                 {title}
-                {/* {apiData?.posts[0].submission.title} */}
             </div>
             <div className='video__details'>
 
@@ -110,7 +84,7 @@ export const Video = ({ video }) => {
                 <img
                     className=' w-9 h-9  mr-2 cursor-pointer rounded-full'
 
-                    // src={apiData?.posts[0].creator.pic}
+
                     src={channelIcon?.url}
                     alt='No'
                 />
