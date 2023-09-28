@@ -5,6 +5,7 @@ import { Sidebar } from "./Components/Sidebar/Sidebar";
 import { Homevideoscreen } from "./Screens/Homevideoscreen";
 import "./App.css";
 import LoginScreen from "./Screens/LoginScreen/Loginscreen";
+import WatchScreen from "./Screens/watchScreen/WatchScreen";
 
 export const Layout = ({ children }) => {
   // below usstate use to toggle sidemenu using menu button
@@ -18,7 +19,8 @@ export const Layout = ({ children }) => {
   return (
     <>
       <Header handlesidebar={handlesidebar} />
-      <div className="appcontainer  flex justify-between ">
+      {/* <div className="appcontainer  flex justify-between "> */}
+      <div className="appcontainer flex   ">
         <Sidebar sideBarBool={sideBarBool} handlesidebar={handlesidebar} />
         {children}
 
@@ -36,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout><Homevideoscreen /></Layout>} />
           <Route path="/auth" element={<Layout><LoginScreen /></Layout>} />
+          <Route path="/watch/:id" element={<Layout><WatchScreen /></Layout>} />
         </Routes>
       </Router>
     </>
