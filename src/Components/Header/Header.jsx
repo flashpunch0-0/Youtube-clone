@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import "./Header.css"
 
 import { AiOutlineSearch } from "react-icons/ai"
@@ -10,8 +10,21 @@ import ytlogomobile from "./Images/yt-logo-mobile.png";
 // import kratik from "./Images/kratik.jpeg";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, } from "react-router-dom";
 export const Header = ({ handlesidebar }) => {
+
+    const [input, setInput] = useState('')
+    const navigate = useNavigate()
+    // const history = useHistory()
+    const handleSubmit = e => {
+        e.preventDefault()
+
+
+        // navigate(`./`)
+        // /search/input dala hai taki extra things naaye in search header of http matlab search/hetsdf/search/sfsd agar ham search karne ke baad vaps search karte hai toh
+        navigate(`/search/${input}`)
+    }
+
     const [user] = useAuthState(auth);
     return (
         <div className=" header flex justify-between items-center   bg-blackprimary ">
@@ -38,8 +51,10 @@ export const Header = ({ handlesidebar }) => {
             </div>
 
             {/* contains input button  */}
-            <form className="flex flex-0.6  bg-blacksecondary border  border-bordercolor rounded-full ">
-                <input type="text" className="outline-none text-white ml-2 pr-5 pl-5 md:pl-0   w-44 md:w-64 lg:w-[500px]  border-none font-medium bg-transparent" placeholder="Search" />
+            <form className="flex flex-0.6  bg-blacksecondary border  border-bordercolor rounded-full " onSubmit={handleSubmit} >
+                <input type="text" className="outline-none text-white ml-2 pr-5 pl-5 md:pl-0   w-44 md:w-64 lg:w-[500px]  border-none font-medium bg-transparent" placeholder="Search" value={input}
+                    onChange={e => setInput(e.target.value)}
+                />
                 <button type="submit" className="bg-bordercolor  w-[40px] md:w-[60px] h-6 md:h-10 flex items-center justify-center  rounded-r-3xl  ">
                     <AiOutlineSearch size={24} />
                 </button>
